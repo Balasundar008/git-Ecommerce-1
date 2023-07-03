@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Card, Button, Container,Col,Row } from 'react-bootstrap';
-import Data from "../data" ;
-import "../App.css"
+import { Card, Button , Row , Col, Container} from 'react-bootstrap';
+import { Link, Routes,Route } from 'react-router-dom';
+import data from '../data'; 
+// Assuming data.js is in the same directory
 
-const Cart = () => {
-  const [cartItems, setCartItems] = useState([]);
-
+const Cart = ({ cartItems, setCartItems }) => {
   // Function to add an item to the cart
   const addToCart = (item) => {
     setCartItems([...cartItems, item]);
@@ -26,10 +25,11 @@ const Cart = () => {
         <div className="card-container">
         <Container>
         <Row>
+       
           {cartItems.map((item) => (
             <Col sm={6} md={4} lg={3}>
             <Card key={item.id}>
-              <Card.Img variant="top" src={item.image} alt={item.name} className='small-images' />
+              <Card.Img variant="top" src={item.image} alt={item.name} />
               <Card.Body>
                 <Card.Title>{item.name}</Card.Title>
                 <Card.Text>Price: {item.price}</Card.Text>
@@ -39,19 +39,22 @@ const Cart = () => {
               </Card.Body>
             </Card>
             </Col>
-            ))}
-            </Row>
-            </Container>
+          ))}
+         
+          </Row>
+          </Container>
+          <Link to="/checkout" className="checkout-link">
+            <button className='m-3 btn btn-outline-dark'>Proceed to Checkout</button>
+          </Link>
         </div>
       )}
 
-      <h2>Available Products</h2>
+      <h2 className='m-3'>Available Products</h2>
       <div className="card-container">
       <Container>
-            <Row>
-        {Data.map((item) => (
-            
-            <Col sm={6} md={4} lg={3}>
+      <Row>
+        {data.map((item) => (
+            <Col sm={6} md={4} lg={3} className='mb-4'>
           <Card key={item.id}>
             <Card.Img variant="top" src={item.image} alt={item.name} />
             <Card.Body>
@@ -63,13 +66,14 @@ const Cart = () => {
             </Card.Body>
           </Card>
           </Col>
-          ))}
-          </Row>
-          </Container>
+        ))}
       
+      </Row>
+      </Container>
       </div>
     </div>
   );
 };
+
 
 export default Cart;
