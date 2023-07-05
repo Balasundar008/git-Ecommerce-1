@@ -32,7 +32,7 @@ const Cart = ({ cartItems, setCartItems }) => {
               <Card.Img variant="top" src={item.image} alt={item.name} />
               <Card.Body>
                 <Card.Title>{item.name}</Card.Title>
-                <Card.Text>Price: {item.price}</Card.Text>
+                <Card.Text>Price:₹{item.price}</Card.Text>
                 <Button variant="danger" onClick={() => removeFromCart(item)}>
                   Remove
                 </Button>
@@ -59,7 +59,7 @@ const Cart = ({ cartItems, setCartItems }) => {
             <Card.Img variant="top" src={item.image} alt={item.name} />
             <Card.Body>
               <Card.Title>{item.name}</Card.Title>
-              <Card.Text>Price: {item.price}</Card.Text>
+              <Card.Text>Price:₹{item.price}</Card.Text>
               <Button variant="success" onClick={() => addToCart(item)}>
                 Add to Cart
               </Button>

@@ -56,7 +56,7 @@ const Home = () => {
               <Card.Body>
                 <Card.Title>{product.name}</Card.Title>
                 <Card.Text>{product.description}</Card.Text>
-                <Card.Text>Price: ${product.price}</Card.Text>
+                <Card.Text>Price: ₹{product.price}</Card.Text>
               </Card.Body>
             </Card>
           </Col>

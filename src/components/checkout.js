@@ -44,7 +44,7 @@ const Checkout = ({ cartItems }) => {
                 <Card.Img variant="top" src={item.image} alt={item.name} />
                 <Card.Body>
                   <Card.Title>{item.name}</Card.Title>
-                  <Card.Text>Price: {item.price}</Card.Text>
+                  <Card.Text>Price:₹{item.price}</Card.Text>
                 </Card.Body>
               </Card>
               </Col>
@@ -53,7 +53,7 @@ const Checkout = ({ cartItems }) => {
           </Container>
            </div>
 
-          <h2 className='m-3'>Total Price: ${totalPrice}</h2>
+          <h2 className='m-3'>Total Price: {totalPrice}</h2>
 
           <Form className='p-3 customer-submit' noValidate validated>
             <Form.Group controlId="formName">
